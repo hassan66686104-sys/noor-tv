@@ -1,0 +1,71 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'app.noortv'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 26
+        targetSdk 34
+        versionCode 5
+        versionName '1.0'
+        buildConfigField 'double', 'LAT', project.property('noor.lat')
+        buildConfigField 'double', 'LON', project.property('noor.lon')
+        buildConfigField 'int', 'METHOD', project.property('noor.method')
+    }
+
+    // One small app per shortcut, so each gets its own tile on the home screen.
+    flavorDimensions = ['item']
+    productFlavors {
+        kahf {
+            dimension 'item'
+            applicationId 'app.noortv.kahf'
+            resValue 'string', 'app_name', 'سورة الكهف'
+            buildConfigField 'String', 'VIDEO', '"9k1U0aGQRNA"'
+            buildConfigField 'boolean', 'REMINDERS', 'true'
+        }
+        baqara {
+            dimension 'item'
+            applicationId 'app.noortv.baqara'
+            resValue 'string', 'app_name', 'سورة البقرة'
+            buildConfigField 'String', 'VIDEO', '"9HW7j9lZZTU"'
+            buildConfigField 'boolean', 'REMINDERS', 'false'
+        }
+        sabah {
+            dimension 'item'
+            applicationId 'app.noortv.sabah'
+            resValue 'string', 'app_name', 'أذكار الصباح'
+            buildConfigField 'String', 'VIDEO', '"fD4uDIoCn3M"'
+            buildConfigField 'boolean', 'REMINDERS', 'false'
+        }
+        masa {
+            dimension 'item'
+            applicationId 'app.noortv.masa'
+            resValue 'string', 'app_name', 'أذكار المساء'
+            buildConfigField 'String', 'VIDEO', '"rQnNno3Do60"'
+            buildConfigField 'boolean', 'REMINDERS', 'false'
+        }
+        ruqya {
+            dimension 'item'
+            applicationId 'app.noortv.ruqya'
+            resValue 'string', 'app_name', 'الرقية الشرعية'
+            buildConfigField 'String', 'VIDEO', '"BVtCjMyJ320"'
+            buildConfigField 'boolean', 'REMINDERS', 'false'
+        }
+    }
+
+    buildFeatures { buildConfig true }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            // Sideloaded over ADB like the launcher: signed with the debug key.
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "dock_apps": ["app.noortv.kahf", "app.noortv.baqara", "app.noortv.sabah", "app.noortv.masa", "app.noortv.ruqya",
+                "com.majnioui.tv.prayer", "com.netflix.ninja", "com.google.android.youtube.tv"],
+  "shamsi_date": true,
+  "wallpaper": false,
+  "wallpaper_dim": 25,
+  "dock_opacity": 70
+}

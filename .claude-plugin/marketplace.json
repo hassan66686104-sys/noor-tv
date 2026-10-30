@@ -1,0 +1,7 @@
+{
+  "name": "noor-tv",
+  "owner": { "name": "majedphotos" },
+  "plugins": [
+    { "name": "noor-tv", "source": "./", "description": "نظّف تلفزيونك وخلّه يأذّن ويذكّرك بالصلاة", "version": "1.0.0" }
+  ]
+}
