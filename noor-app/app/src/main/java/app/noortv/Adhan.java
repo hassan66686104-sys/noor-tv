@@ -198,7 +198,7 @@ public class Adhan extends BroadcastReceiver {
                     WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                     PixelFormat.TRANSLUCENT);
             lp.gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
-            lp.y = 60;
+            lp.y = 215; // below the clock block, so the weather and next prayer stay readable
             try {
                 wm.addView(v, lp);
             } catch (Exception e) {
