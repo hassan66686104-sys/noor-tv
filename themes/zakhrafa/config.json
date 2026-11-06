@@ -1,0 +1,14 @@
+{
+  "wallpaper_true_color": true,
+  "wallpaper": true,
+  "wallpaper_rotation_minutes": 0,
+  "wallpaper_dim": 0,
+  "background_color": "#04170f",
+  "dock_opacity": 70,
+  "glass_style": "rim",
+  "icon_only_buttons": true,
+  "icon_only_inputs": true,
+  "wifi_label_width": 0,
+  "ambient_glow": false,
+  "columns": 4
+}

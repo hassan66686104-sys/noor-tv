@@ -1,0 +1,14 @@
+{
+  "wallpaper_true_color": true,
+  "wallpaper": true,
+  "wallpaper_rotation_minutes": 0,
+  "wallpaper_dim": 0,
+  "background_color": "#040a1c",
+  "dock_band": false,
+  "top_menu": true,
+  "glass_style": "halo",
+  "app_glow": true,
+  "ambient_glow": false,
+  "columns": 5,
+  "focus_overshoot": false
+}

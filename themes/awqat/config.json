@@ -1,0 +1,25 @@
+{
+  "wallpaper_true_color": true,
+  "wallpaper": true,
+  "wallpaper_rotation_minutes": 30,
+  "wallpaper_moods": {
+    "morning": [
+      "morning.jpg"
+    ],
+    "evening": [
+      "evening.jpg"
+    ],
+    "night": [
+      "night.jpg"
+    ]
+  },
+  "wallpaper_dim": 8,
+  "wallpaper_order": "sequential",
+  "background_color": "#0a1126",
+  "dock_glass": true,
+  "glass_style": "glass",
+  "ambient_glow": false,
+  "columns": 6,
+  "show_network_pill": false,
+  "icon_only_inputs": true
+}
