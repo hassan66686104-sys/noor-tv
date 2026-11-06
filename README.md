@@ -8,8 +8,8 @@
 
 ![Android TV](https://img.shields.io/badge/Android_TV-✓-3DDC84?style=flat-square&logo=androidtv&logoColor=white)
 ![Google TV](https://img.shields.io/badge/Google_TV-✓-4285F4?style=flat-square&logo=googletv&logoColor=white)
-![Claude Code](https://img.shields.io/badge/Claude_Code-جاهز-D97757?style=flat-square)
-![License](https://img.shields.io/badge/MIT-مجاني-yellow?style=flat-square)
+![Claude Code](https://img.shields.io/badge/Claude_Code-ready-D97757?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
 
 ![نور تي في على تلفزيون حقيقي](docs/demo.gif)
 
