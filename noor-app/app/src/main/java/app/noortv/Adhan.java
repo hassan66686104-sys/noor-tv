@@ -45,6 +45,10 @@ public class Adhan extends BroadcastReceiver {
     private static final String[] NAMES = {"الفجر", "الظهر", "العصر", "المغرب", "العشاء"};
 
     private static MediaPlayer player;
+    /** The adhan plays at this share of the TV's full volume (0.5 = medium), whatever the volume was set to. */
+    private static final float ADHAN_VOLUME = 0.5f;
+    private static AudioManager audio;
+    private static int savedVolume = -1;
 
     /** Sets the alarm for the next prayer; fetches today's and tomorrow's times in the background. */
     static void schedule(Context c) {
@@ -131,6 +135,10 @@ public class Adhan extends BroadcastReceiver {
             return;
         }
         player.setOnCompletionListener(mp -> stop());
+        audio = app.getSystemService(AudioManager.class);
+        savedVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
+        int max = audio.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+        audio.setStreamVolume(AudioManager.STREAM_MUSIC, Math.max(1, Math.round(max * ADHAN_VOLUME)), 0);
         player.start();
         banner(app, text, player.getDuration());
         watch(app);
@@ -161,6 +169,10 @@ public class Adhan extends BroadcastReceiver {
         }
         player.release();
         player = null;
+        if (audio != null && savedVolume >= 0) { // give the TV back the volume it had before the adhan
+            audio.setStreamVolume(AudioManager.STREAM_MUSIC, savedVolume, 0);
+            savedVolume = -1;
+        }
     }
 
     /** The app in front, from usage events (GET_USAGE_STATS is granted over adb), or null if unknown. */
