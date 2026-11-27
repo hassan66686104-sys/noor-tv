@@ -1,0 +1,32 @@
+# Builds the "المدينة 3D" card and puts it on a release, so it can be installed on the TV
+# straight from the Downloader app, with no laptop.
+name: Build Madinah 3D card
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['noor-app/**', '.github/workflows/build-madinah.yml']
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - name: Build
+        working-directory: noor-app
+        run: |
+          chmod +x gradlew
+          ./gradlew --no-daemon -q assembleMadinahRelease
+          cp app/build/outputs/apk/madinah/release/app-madinah-release.apk ../madinah.apk
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete madinah --yes --cleanup-tag || true
+          gh release create madinah madinah.apk --title "المدينة 3D" --notes "كرت المدينة المنورة 3D للتلفزيون"
