@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
-/** Opens this shortcut's video in the YouTube TV app, then gets out of the way. */
+/** Opens this shortcut's video in the YouTube TV app (or its website in WebActivity), then gets out of the way. */
 public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle b) {
@@ -14,6 +14,11 @@ public class MainActivity extends Activity {
             Reminder.schedule(this);
             Adhan.schedule(this);
             MessageServer.start(this);
+        }
+        if (!BuildConfig.URL.isEmpty()) {
+            startActivity(new Intent(this, WebActivity.class));
+            finish();
+            return;
         }
         Uri video = Uri.parse("https://www.youtube.com/watch?v=" + BuildConfig.VIDEO);
         Intent yt = new Intent(Intent.ACTION_VIEW, video).setPackage("com.google.android.youtube.tv");

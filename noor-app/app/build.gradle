@@ -22,6 +22,7 @@ android {
             applicationId 'app.noortv.kahf'
             resValue 'string', 'app_name', 'سورة الكهف'
             buildConfigField 'String', 'VIDEO', '"9k1U0aGQRNA"'
+            buildConfigField 'String', 'URL', '""'
             buildConfigField 'boolean', 'REMINDERS', 'true'
         }
         baqara {
@@ -29,6 +30,7 @@ android {
             applicationId 'app.noortv.baqara'
             resValue 'string', 'app_name', 'سورة البقرة'
             buildConfigField 'String', 'VIDEO', '"9HW7j9lZZTU"'
+            buildConfigField 'String', 'URL', '""'
             buildConfigField 'boolean', 'REMINDERS', 'false'
         }
         sabah {
@@ -36,6 +38,7 @@ android {
             applicationId 'app.noortv.sabah'
             resValue 'string', 'app_name', 'أذكار الصباح'
             buildConfigField 'String', 'VIDEO', '"fD4uDIoCn3M"'
+            buildConfigField 'String', 'URL', '""'
             buildConfigField 'boolean', 'REMINDERS', 'false'
         }
         masa {
@@ -43,6 +46,15 @@ android {
             applicationId 'app.noortv.masa'
             resValue 'string', 'app_name', 'أذكار المساء'
             buildConfigField 'String', 'VIDEO', '"rQnNno3Do60"'
+            buildConfigField 'String', 'URL', '""'
+            buildConfigField 'boolean', 'REMINDERS', 'false'
+        }
+        madinah {
+            dimension 'item'
+            applicationId 'app.noortv.madinah'
+            resValue 'string', 'app_name', 'المدينة 3D'
+            buildConfigField 'String', 'VIDEO', '""'
+            buildConfigField 'String', 'URL', '"https://madinah3d.com"'
             buildConfigField 'boolean', 'REMINDERS', 'false'
         }
         ruqya {
@@ -50,6 +62,7 @@ android {
             applicationId 'app.noortv.ruqya'
             resValue 'string', 'app_name', 'الرقية الشرعية'
             buildConfigField 'String', 'VIDEO', '"BVtCjMyJ320"'
+            buildConfigField 'String', 'URL', '""'
             buildConfigField 'boolean', 'REMINDERS', 'false'
         }
     }
